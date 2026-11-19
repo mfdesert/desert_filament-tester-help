@@ -28,15 +28,23 @@
       flex-shrink: 0;
     }
 
+    .header-text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
     h1 {
       margin: 0;
       color: #60a5fa;
       font-size: 2rem;
+      line-height: 1.2;
     }
 
     .subtitle {
-      margin: 0 0 12px 0;
+      margin: 0;
       color: #7dd3fc;
+      line-height: 1.35;
     }
 
     h2 {
@@ -79,10 +87,11 @@
         stroke-linejoin="round"
       />
     </svg>
-    <h1>Desert Filament Tester</h1>
+    <div class="header-text">
+      <h1>Desert Filament Tester</h1>
+      <p class="subtitle">To test 1.75mm filament for FDM printers.</p>
+    </div>
   </div>
-
-  <p class="subtitle">To test 1.75mm filament for FDM printers.</p>
 
   <p>Select a document or firmware package below to download.</p>
 
