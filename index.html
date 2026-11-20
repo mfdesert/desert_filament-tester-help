@@ -5,27 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Desert Filament Tester — Downloads</title>
   <style>
+    :root {
+      --bg: #000000;
+      --surface: #070d16;
+      --surface-hover: #0c1726;
+      --border: #172b47;
+      --border-accent: #2563eb;
+      --title: #60a5fa;
+      --link: #38bdf8;
+      --link-hover: #93c5fd;
+      --subtext: #7dd3fc;
+      --desc: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      background-color: #000000;
-      color: #38bdf8;
-      font-family: sans-serif;
-      max-width: 680px;
-      margin: 40px auto;
-      padding: 0 20px;
+      background-color: var(--bg);
+      color: var(--link);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      max-width: 720px;
+      margin: 48px auto;
+      padding: 0 20px 48px;
       line-height: 1.6;
     }
 
     .header-row {
       display: flex;
       align-items: center;
-      gap: 18px;
-      margin-bottom: 12px;
+      gap: 20px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 20px;
     }
 
     .drop-icon {
       width: 84px;
       height: 84px;
       flex-shrink: 0;
+      filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.25));
     }
 
     .header-text {
@@ -36,43 +56,101 @@
 
     h1 {
       margin: 0;
-      color: #60a5fa;
+      color: var(--title);
       font-size: 2rem;
-      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
     }
 
     .subtitle {
       margin: 0;
-      color: #7dd3fc;
+      color: var(--subtext);
+      font-size: 1rem;
       line-height: 1.35;
     }
 
+    .intro {
+      margin: 0 0 8px;
+      color: var(--subtext);
+      font-size: 0.96rem;
+    }
+
     h2 {
-      margin-top: 28px;
-      color: #38bdf8;
+      margin-top: 30px;
+      margin-bottom: 14px;
+      color: var(--link);
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
       border-bottom: 1px solid #1e3a5f;
-      padding-bottom: 6px;
-    }
-
-    p, li {
-      color: #7dd3fc;
-    }
-
-    a {
-      color: #38bdf8;
-      text-decoration: underline;
-    }
-
-    a:hover {
-      color: #93c5fd;
+      padding-bottom: 8px;
     }
 
     ul {
-      padding-left: 20px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
     li {
-      margin: 8px 0;
+      background: linear-gradient(180deg, rgba(12, 23, 38, 0.72) 0%, rgba(7, 13, 22, 0.92) 100%);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--border-accent);
+      border-radius: 8px;
+      padding: 12px 16px;
+      transition: border-color 0.18s ease, background-color 0.18s ease, transform 0.18s ease;
+    }
+
+    li:hover {
+      border-color: var(--link);
+      border-left-color: var(--link);
+      background: var(--surface-hover);
+      transform: translateY(-1px);
+    }
+
+    a {
+      color: var(--link);
+      font-weight: 600;
+      font-size: 1.02rem;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .item-note {
+      display: block;
+      color: var(--desc);
+      font-size: 0.9rem;
+      margin-top: 3px;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 520px) {
+      body {
+        margin: 28px auto;
+      }
+
+      .header-row {
+        gap: 14px;
+      }
+
+      .drop-icon {
+        width: 84px;
+        height: 84px;
+      }
+
+      h1 {
+        font-size: 1.65rem;
+      }
     }
   </style>
 </head>
@@ -93,21 +171,26 @@
     </div>
   </div>
 
-  <p>Select a document or firmware package below to download.</p>
+  <p class="intro">Select a document or firmware package below to download.</p>
 
   <h2>Documentation</h2>
   <ul>
-    <li><a href="Desert_Filament_Tester_Manual.pdf">Detailed Manual (PDF)</a></li>
-    <small style="display: block; color: #ffffff; margin-top: 2px;">Complete setup, calibration, and safety instructions.</small>
-    <li><a href="Desert_Filament_Tester_Quick_Start.pdf">Quick Start (PDF)</a></li>
-    <small style="display: block; color: #ffffff; margin-top: 2px;">Quick start instructions.</small>
+    <li>
+      <a href="Desert_Filament_Tester_Manual.pdf">Detailed Manual (PDF)</a>
+      <small class="item-note">Complete setup, calibration, and safety instructions.</small>
+    </li>
+    <li>
+      <a href="Desert_Filament_Tester_Quick_Start.pdf">Quick Start (PDF)</a>
+      <small class="item-note">Quick start instructions.</small>
+    </li>
   </ul>
 
   <h2>Firmware Downloads</h2>
   <ul>
-    <li><a href="https://github.com/mfdesert/desert_filament-tester-help/releases/latest">Desert_Filament_Tester_v1.7.7.22 (.bin)</a>
-     <small style="display: block; color: #ffffff; margin-top: 2px;">Novermber 2026.</small>
-      <li>
+    <li>
+      <a href="https://github.com/mfdesert/desert_filament-tester-help/releases/latest">Desert_Filament_Tester_v1.7.7.22 (.bin)</a>
+      <small class="item-note">Novermber 2026.</small>
+    </li>
   </ul>
 </body>
 </html>
